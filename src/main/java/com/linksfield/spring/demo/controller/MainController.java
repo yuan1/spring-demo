@@ -50,17 +50,6 @@ public class MainController {
         log.info("index {}", model.asMap());
         return "index";
     }
-    @GetMapping("test")
-    public String demo(Model model) {
-        RestTemplate restTemplate = new RestTemplate();
-        Map<String, Object> result = restTemplate.getForObject("http://spring-test:8082/api?message=fromDemo", Map.class);
-        log.info("test rest result is {}", result);
-        if (result != null) {
-            model.addAllAttributes(result);
-        }
-        log.info("test {}", model.asMap());
-        return "test";
-    }
     @GetMapping("api")
     @ResponseBody
     public Object api(@RequestParam String message) {
@@ -70,4 +59,15 @@ public class MainController {
         return map;
     }
 
+    @GetMapping("api/test")
+    public String demo(Model model) {
+        RestTemplate restTemplate = new RestTemplate();
+        Map<String, Object> result = restTemplate.getForObject("http://spring-test:8083/api?message=fromDemo", Map.class);
+        log.info("test rest result is {}", result);
+        if (result != null) {
+            model.addAllAttributes(result);
+        }
+        log.info("test {}", model.asMap());
+        return "test";
+    }
 }

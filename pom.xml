@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.linksfield</groupId>
     <artifactId>spring-demo</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>spring-demo</name>
     <description>spring-demo</description>
     <properties>
