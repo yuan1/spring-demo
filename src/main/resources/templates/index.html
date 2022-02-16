@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<h2>Spring Demo</h2>
+<table style="text-align: center; width: 600px;margin-top: 60px">
+    <thead>
+    <tr>
+        <th>应用IP</th>
+        <th>访问时间</th>
+        <th>访问统计</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${ip}"></td>
+        <td th:text="${time}"></td>
+        <td th:text="${count}"></td>
+    </tr>
+    </tbody>
+</table>
+<br />
+<a href="test">get result from test service</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test-Result</title>
+</head>
+<body>
+<h2>Spring Test Result</h2>
+<table style="text-align: center; width: 600px;margin-top: 60px">
+    <thead>
+    <tr>
+        <th>应用IP</th>
+        <th>访问时间</th>
+        <th>访问统计</th>
+        <th>消息</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${ip}"></td>
+        <td th:text="${time}"></td>
+        <td th:text="${count}"></td>
+        <td th:text="${message}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
