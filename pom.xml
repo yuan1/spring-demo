@@ -60,25 +60,27 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>${dockerfile-maven-version}</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <!--如果package时不想用docker打包,就注释掉这个goal-->
-                            <!-- <goal>build</goal>
-                             <goal>push</goal>-->
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.8.0</version>
                 <configuration>
-                    <repository>limy/spring-demo</repository>
-                    <tag>${project.version}</tag>
-                    <buildArgs>
-                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
+                    <from>
+                        <image>openjdk:8-jre</image>
+                    </from>
+                    <to>
+                        <image>registry.hub.docker.com/limy/${project.name}</image>
+                        <tags>
+                            <tag>${project.version}</tag>
+                        </tags>
+                        <auth>
+                            <username>limy</username>
+                            <password>xxx</password>
+                        </auth>
+                    </to>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <container>
+                        <mainClass>com.linksfield.spring.demo.SpringDemoApplication</mainClass>
+                    </container>
                 </configuration>
             </plugin>
         </plugins>
